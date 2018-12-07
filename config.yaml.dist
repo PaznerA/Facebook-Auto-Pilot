@@ -1,0 +1,12 @@
+site:
+    baseUrl: "http://localhost"
+facebook:
+    appId: "xxxx"
+    appSecret: "xxxxxxxxx"
+    tokenExtendUrl: "https://graph.facebook.com/oauth/access_token"
+database:
+    driver: "sqlite3"
+    dbName: "xxxx"
+    logFile: "xxx"
+    dbUser: "root"
+    dbPass: "password"
