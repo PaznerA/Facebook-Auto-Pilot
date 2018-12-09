@@ -1,5 +1,4 @@
-
-function decorateFbGroup(group){
+function decorateFbGroup(group) {
 
     html = '<div class="col-md-12">\n' +
         '        <div class="panel panel-default">\n' +
@@ -9,13 +8,13 @@ function decorateFbGroup(group){
         '                        <div class="col-md-11">\n' +
         '                            <div class="media">\n' +
         '                              <div class="media-left">\n' +
-        '                                <a href="#">\n' +
-        '                                  <img class="media-object photo-profile" src="http://0.gravatar.com/avatar/38d618563e55e6082adf4c8f8c13f3e4?s=40&d=mm&r=g" width="40" height="40" alt="...">\n' +
+        '                                <a href="?page_id=' + group.id + '">\n' +
+        '                                  <img class="media-object photo-profile" src="https://graph.facebook.com/' + group.id + '/picture?type=square" width="40" height="40" alt="...">\n' +
         '                                </a>\n' +
         '                              </div>\n' +
         '                              <div class="media-body">\n' +
-        '                                <a href="#" class="anchor-username"><h4 class="media-heading">' + group.name + '</h4></a> \n' +
-        '                                <a href="#" class="anchor-time">' + group.privacy + '</a>\n' +
+        '                                <a href="?page_id=' + group.id + '" class="anchor-username"><h4 class="media-heading">' + group.name + '</h4></a> \n' +
+        '                                <a href="?page_id=' + group.id + '" class="anchor-time">' + group.privacy + '</a>\n' +
         '                              </div>\n' +
         '                            </div>\n' +
         '                        </div>\n' +
@@ -61,15 +60,15 @@ function decorateFbGroup(group){
 
 }
 
-function getGroupFeed(id){
-        console.log('Getting group feed.... ');
+function getGroupFeed(id) {
+    console.log('Getting group feed.... ');
 
-        FB.api(id+'/feed', function (response) {
-            console.log(response);
-            data = response.data;
-            $.each(data, function (key, value) {
-                $('#groupFeed_'+id).append('<li><small>' + value.updated_time + '</small><strong>' + value.story + ':</strong> ' + value.message + ' </li>');
-            });
+    FB.api(id + '/feed', function (response) {
+        console.log(response);
+        data = response.data;
+        $.each(data, function (key, value) {
+            $('#groupFeed_' + id).append('<li><small>' + value.updated_time + '</small><strong>' + value.story + ':</strong> ' + value.message + ' </li>');
         });
+    });
 
 }

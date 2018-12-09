@@ -10,7 +10,7 @@ function decorateFbEvent(event){
         '                            <div class="media">\n' +
         '                              <div class="media-left">\n' +
         '                                <a href="#">\n' +
-        '                                  <img class="media-object photo-profile" src="http://0.gravatar.com/avatar/38d618563e55e6082adf4c8f8c13f3e4?s=40&d=mm&r=g" width="40" height="40" alt="...">\n' +
+        '                                  <img class="media-object photo-profile" src="https://graph.facebook.com/' + event.id + '/picture?type=square" width="40" height="40" alt="...">\n' +
         '                                </a>\n' +
         '                              </div>\n' +
         '                              <div class="media-body">\n' +

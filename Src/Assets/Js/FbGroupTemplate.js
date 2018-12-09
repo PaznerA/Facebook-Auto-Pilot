@@ -8,9 +8,14 @@ function decorateFbSite(group){
         '                    <div class="row">\n' +
         '                        <div class="col-md-11">\n' +
         '                            <div class="media">\n' +
+        '                              <div class="media-left">\n' +
+        '                                <a href="?page_id=' + group.id + '">\n' +
+        '                                  <img class="media-object photo-profile" src="https://graph.facebook.com/' + group.id + '/picture?type=square" width="40" height="40" alt="...">\n' +
+        '                                </a>\n' +
+        '                              </div>\n' +
         '                              <div class="media-body">\n' +
-        '                                <a href="#" class="anchor-username"><h4 class="media-heading">' + group.name + '</h4></a> \n' +
-        '                                <a href="#" class="anchor-time">' + group.category + '</a>\n' +
+        '                                <a href="?page_id=' + group.id + '" class="anchor-username"><h4 class="media-heading">' + group.name + '</h4></a> \n' +
+        '                                <a href="?page_id=' + group.id + '"" class="anchor-time">' + group.category + '</a>\n' +
         '                              </div>\n' +
         '                            </div>\n' +
         '                        </div>\n' +
@@ -36,20 +41,6 @@ function decorateFbSite(group){
         '                            <li><a href="#"><i class="alert alert-warning glyphicon glyphicon-comment"></i> Označit poznámkou</a></li>\n' +
         '                            <li><a href="#"><i class="alert alert-danger glyphicon glyphicon-remove"></i> Odebrat ze seznamu</a></li>\n' +
         '                        </ul>\n' +
-        '                   </div>\n' +
-        '                   <div class="post-footer-comment-wrapper">\n' +
-        '                       <div class="comment-form">\n' +
-        '                           \n' +
-        '                       </div>\n' +
-        '                       <div class="comment">\n' +
-        '                            <div class="media">\n' +
-        '                              <div class="media-left">\n' +
-        '                                <a href="#">\n' +
-        '                                  <img class="media-object photo-profile" src="http://0.gravatar.com/avatar/38d618563e55e6082adf4c8f8c13f3e4?s=40&d=mm&r=g" width="32" height="32" alt="...">\n' +
-        '                                </a>\n' +
-        '                              </div>\n' +
-        '                            </div>\n' +
-        '                       </div>\n' +
         '                   </div>\n' +
         '               </section>\n' +
         '            </div>\n' +
