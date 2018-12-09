@@ -1,0 +1,11 @@
+<?php
+
+define('SITE_URL','https://login.xlsx.eu/Examples/');
+define('FB_APP_ID','xxxxxxx');
+define('FB_APP_SECRET','xxxxxxx');
+define('FB_TOKEN_EXTEND_URL','https://graph.facebook.com/oauth/access_token');
+define('DB_DRIVER','sqlite3');
+define('DB_NAME','');
+define('DB_USER','');
+define('DB_PASSWORD','');
+define('DB_LOGFILE_PATH','');

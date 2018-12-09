@@ -2,14 +2,7 @@
 
 session_start();
 
+header('Content-Type: text/html; charset=utf-8');
+
 require 'vendor/autoload.php';
-
-$config = yaml_parse_file('config.yaml');
-
-$database = new Dibi\Connection([
-    'driver' => $config->database->driver,
-    'database' => $config->database->dbName,
-    'profiler' => [
-        'file' => 'file.log',
-    ],
-]);
+require 'Examples/config.php';

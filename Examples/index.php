@@ -1,5 +1,5 @@
 <?php
- require 'bootstrap.php';
+ require '../bootstrap.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +12,6 @@
 <script>
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
-        console.log('statusChangeCallback');
-        console.log(response);
         // The response object is returned with a status field that lets the
         // app know the current login status of the person.
         // Full docs on the response object can be found in the documentation
@@ -22,17 +20,15 @@
             // Logged into your app and Facebook.
 
 
-            const url = "<?php echo $config->site->baseUrl; ?>/extendToken.php";
-            $.post( "<?php echo $config->site->baseUrl; ?>/extendToken.php", { access_token : response.authResponse.accessToken, user_id: response.authResponse.userID } )
+            const url = "<?php echo SITE_URL; ?>login.php";
+            $.post( url, { access_token : response.authResponse.accessToken, user_id: response.authResponse.userID } )
                 .done(function( data ) {
                     if(data === "logged_in"){
-                        window.location.replace('/admin/');
+                        window.location.replace("<?php echo SITE_URL; ?>admin.php");
                     }else{
-                        alert("Nepodařilo se přihlásit! Zkuste to prosím znovu");
+                        alert(data);
                     }
                 });
-
-            testAPI();
 
         } else {
             // The person is not logged into your app or we are unable to tell.
@@ -52,7 +48,7 @@
 
     window.fbAsyncInit = function () {
         FB.init({
-            appId: '<?php echo $config->facebook->appId; ?>',
+            appId: '<?php echo FB_APP_ID; ?>',
             cookie: true,  // enable cookies to allow the server to access
                            // the session
             xfbml: true,  // parse social plugins on this page
@@ -87,26 +83,8 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
-    // Here we run a very simple test of the Graph API after login is
-    // successful.  See statusChangeCallback() for when this call is made.
-    function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
 
-        FB.api('/me', function (response) {
-            console.log('Successful login for: ' + response.name);
-            console.log('User data: ',response);
-            document.getElementById('status').innerHTML =
-                'Thanks for logging in, ' + response.name + '!';
-        });
-    }
 
-    function getGroups() {
-        console.log('Getting available groups.... ');
-
-        FB.api('/me/groups', function (response) {
-            console.log(response);
-        });
-    }
 </script>
 
 <!--
