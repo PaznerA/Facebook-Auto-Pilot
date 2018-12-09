@@ -1,48 +1,47 @@
 /*-- Global Selectors --*/
-a{
-  color:#47649F;
+a {
+  color: #47649F;
 }
 
-body{
-  font-family:'helvetica';
+body {
+  font-family: 'helvetica';
 }
 
 /*-- Bootstrap Override Style --*/
 
-
 /*-- Content Style --*/
-.post-footer-option li{
-  float:left;
-  margin-right:50px;
-  padding-bottom:15px;
+.post-footer-option li {
+  float: left;
+  margin-right: 50px;
+  padding-bottom: 15px;
 }
 
-.post-footer-option li a{
-  color:#AFB4BD;
-  font-weight:500;
-  font-size:1.3rem;
+.post-footer-option li a {
+  color: #AFB4BD;
+  font-weight: 500;
+  font-size: 1.3rem;
 }
 
-.photo-profile{
-  border:1px solid #DDD;
+.photo-profile {
+  border: 1px solid #DDD;
 }
 
-.anchor-username h4{
-  font-weight:bold;
+.anchor-username h4 {
+  font-weight: bold;
 }
 
-.anchor-time{
-  color:#ADB2BB;
-  font-size:1.2rem;
+.anchor-time {
+  color: #ADB2BB;
+  font-size: 1.2rem;
 }
 
-.post-footer-comment-wrapper{
-  background-color:#F6F7F8;
+.post-footer-comment-wrapper {
+  background-color: #F6F7F8;
 }
 
-.main_controls{
+.main_controls {
   position: relative;
-  .overlay{
+  .overlay {
     position: absolute;
     left: 0;
     right: 0;
@@ -52,11 +51,12 @@ body{
     visibility: 0.8;
     z-index: 99;
     display: none;
-    &.visible{
+    &.visible {
       display: block;
     }
   }
 }
 
 @import "GroupsDecorator";
+@import "PostDecorator";
 @import "PostLoading";
