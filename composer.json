@@ -1,0 +1,21 @@
+{
+  "name": "paznerA/fb2cms",
+  "authors": [
+    {
+      "name": "Aleš Pázner",
+      "email": "ales.pazner@polyweb.cz"
+    }
+  ],
+  "require": {
+    "php": "^7.0",
+    "facebook/graph-sdk": "5.6.*",
+    "dibi/dibi": "3.2.*",
+    "latte/latte": "2.4.7",
+    "tracy/tracy": "2.5.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "FB2CMS\\": "Src/"
+    }
+  }
+}
