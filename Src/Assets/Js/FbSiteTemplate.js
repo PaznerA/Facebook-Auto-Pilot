@@ -1,5 +1,5 @@
 
-function decorateFbSite(group){
+function decorateFbGroup(group){
 
     html = '<div class="col-md-12">\n' +
         '        <div class="panel panel-default">\n' +
@@ -8,9 +8,14 @@ function decorateFbSite(group){
         '                    <div class="row">\n' +
         '                        <div class="col-md-11">\n' +
         '                            <div class="media">\n' +
+        '                              <div class="media-left">\n' +
+        '                                <a href="#">\n' +
+        '                                  <img class="media-object photo-profile" src="http://0.gravatar.com/avatar/38d618563e55e6082adf4c8f8c13f3e4?s=40&d=mm&r=g" width="40" height="40" alt="...">\n' +
+        '                                </a>\n' +
+        '                              </div>\n' +
         '                              <div class="media-body">\n' +
         '                                <a href="#" class="anchor-username"><h4 class="media-heading">' + group.name + '</h4></a> \n' +
-        '                                <a href="#" class="anchor-time">' + group.category + '</a>\n' +
+        '                                <a href="#" class="anchor-time">' + group.privacy + '</a>\n' +
         '                              </div>\n' +
         '                            </div>\n' +
         '                        </div>\n' +
@@ -20,13 +25,9 @@ function decorateFbSite(group){
         '                    </div>             \n' +
         '               </section>\n' +
         '               <section class="post-body">\n' +
-        '                   <ul>';
-    (group.tasks).forEach(function (task,key) {
-        html += '<li>';
-        html += '<span class="alert alert-primary">' + task + '</span>';
-        html += '</li>';
-    });
-        '               </ul>\n' +
+        '                   <p>Byly staženy pouze základní informace</p> \n' +
+        '                   <button onClick="getGroupFeed(' + group.id + ')">Zobrazit příspěvky</button> \n' +
+        '                   <ul id="groupFeed_' + group.id + '"></ul> \n' +
         '               </section>\n' +
         '               <section class="post-footer">\n' +
         '                   <hr>\n' +
